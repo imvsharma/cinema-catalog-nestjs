@@ -1,7 +1,8 @@
 import { Module } from '@nestjs/common';
 import { UserController } from './controller/user.controller';
 import { UserService } from './service/user.service';
-import {ClientsModule, Transport} from '@nestjs/microservices'
+import {ClientsModule, Transport} from '@nestjs/microservices';
+import {ConfigService} from '@nestjs/config'
 @Module({
   imports:[
     ClientsModule.register([
@@ -9,7 +10,7 @@ import {ClientsModule, Transport} from '@nestjs/microservices'
         name: 'AUTH_SERVICE',
         transport: Transport.RMQ,
         options: {
-          urls: ['amqps://fhtklkfe:EJxdQHHWkoJLbLSQ44r2X4QgJdLHqQT3@snake.rmq2.cloudamqp.com/fhtklkfe'],
+          urls: [''],
           queue: 'auth_microservice_queue',
           queueOptions: {
             durable: false

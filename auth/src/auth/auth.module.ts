@@ -9,7 +9,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
       name: 'USER_SERVICE',
       transport: Transport.RMQ,
       options: {
-        urls: ['amqps://fhtklkfe:EJxdQHHWkoJLbLSQ44r2X4QgJdLHqQT3@snake.rmq2.cloudamqp.com/fhtklkfe'],
+        urls: [''],
         queue: 'user_microservice_queue',
         queueOptions: {
           durable: false
