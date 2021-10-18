@@ -1,0 +1,30 @@
+version: "3.7"
+services:
+  mongo:
+    image: "mongo"
+    container_name: "mongo"
+    ports:
+      - "27017:27017"
+    restart: always
+    networks: 
+      - nestjs-network
+    volumes:
+    - './data:/data/db'
+
+  movies-service-ms:
+    image: movies-service-ms
+    container_name: movies-service-ms
+    ports:
+      - 8080:80
+    env_file:
+      - .env
+    restart: always
+    links:
+      - mongo
+    networks: 
+      - nestjs-network
+
+networks:
+  nestjs-network:
+    driver: bridge
+
