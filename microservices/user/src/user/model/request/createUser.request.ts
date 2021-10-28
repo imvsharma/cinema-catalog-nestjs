@@ -1,0 +1,48 @@
+import { createUserRequestType } from "src/user/types/createUserRequest.type";
+
+export class CreateUserRequest {
+  private _username: string;
+  private _password: string;
+  private _name: string;
+  private _email: string;
+
+  constructor (user: createUserRequestType) {
+    this._username = user.username;
+    this._password = user.password;
+    this._email = user.email;
+    this._name = user.name;
+  }
+
+  public get username (): string {
+    return this._username;
+  }
+
+  public set username(username: string) {
+    this._username = username;
+  }
+
+  public get password (): string {
+    return this._password;
+  }
+
+  public set password (password: string){
+    this._password = password;
+  }
+
+  public get name (): string {
+    return this._name;
+  }
+
+  public set name (name: string) {
+    this._name = name;
+  }
+
+  public get email (): string {
+    return this._email;
+  }
+
+  public set email (email: string) {
+    this._email = email;
+  }
+  
+}
